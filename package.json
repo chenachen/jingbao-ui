@@ -6,11 +6,12 @@
     "scripts": {
         "dev": "node ./scripts/dev.js",
         "pre-commit": "lint-staged",
-        "prepare": "husky install",
-        "commit": "git-cz"
+        "commit": "git-cz",
+        "prepare": "husky"
     },
     "private": true,
     "dependencies": {
+        "@micro-zoe/micro-app": "1.0.0-rc.13",
         "element-plus": "^2.8.8",
         "pinia": "^2.2.1",
         "vue": "^3.5.12",

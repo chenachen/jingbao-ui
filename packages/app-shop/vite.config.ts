@@ -1,16 +1,16 @@
 import { defineConfig, loadEnv } from 'vite'
-import { convertViteEnv, getPathBaseRoot } from '../../scripts/vite/utils'
-import { createVitePlugins } from '../../scripts/vite/plugins'
+import { convertViteEnv, getPathBaseRoot, createVitePlugins } from '@common/utils'
 
 export default defineConfig(({ command, mode }) => {
     const isProduction = command === 'build'
     const envDir = getPathBaseRoot('envs')
-    const { SHOP_PORT } = convertViteEnv(loadEnv(mode, envDir))
+    const { VITE_SHOP_PORT } = convertViteEnv(loadEnv(mode, envDir))
 
     return {
         server: {
-            port: SHOP_PORT,
+            port: VITE_SHOP_PORT,
         },
+        envDir,
         plugins: createVitePlugins(isProduction),
     }
 })

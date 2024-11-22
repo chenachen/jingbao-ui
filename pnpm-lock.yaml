@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@micro-zoe/micro-app':
+        specifier: 1.0.0-rc.13
+        version: 1.0.0-rc.13
       element-plus:
         specifier: ^2.8.8
         version: 2.8.8(vue@3.5.13(typescript@5.6.3))
@@ -97,11 +100,32 @@ importers:
         specifier: ^2.1.8
         version: 2.1.10(typescript@5.6.3)
 
-  packages/app-base: {}
+  packages/app-base:
+    dependencies:
+      '@common/constant':
+        specifier: workspace:*
+        version: link:../common-constant
+      '@common/utils':
+        specifier: workspace:*
+        version: link:../common-utils
 
-  packages/app-order: {}
+  packages/app-order:
+    dependencies:
+      '@common/constant':
+        specifier: workspace:*
+        version: link:../common-constant
+      '@common/utils':
+        specifier: workspace:*
+        version: link:../common-utils
 
-  packages/app-shop: {}
+  packages/app-shop:
+    dependencies:
+      '@common/constant':
+        specifier: workspace:*
+        version: link:../common-constant
+      '@common/utils':
+        specifier: workspace:*
+        version: link:../common-utils
 
   packages/common-components: {}
 
@@ -615,6 +639,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@micro-zoe/micro-app@1.0.0-rc.13':
+    resolution: {integrity: sha512-2FA2dpYFAIKwoNtDABrGB3TpVWkqfi3wxxbtfRPkomEhiWLZyth7mocY1TjpUCIcNNiIxdfz42ebZA0tK+6dkw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2864,7 +2891,7 @@ snapshots:
       '@types/node': 20.5.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.6.3)
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.6.3))(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))(typescript@5.6.3)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.6.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.6.3))(typescript@5.6.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3200,6 +3227,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@micro-zoe/micro-app@1.0.0-rc.13': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3898,7 +3927,7 @@ snapshots:
       meow: 8.1.2
       split2: 3.2.2
 
-  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.6.3))(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))(typescript@5.6.3):
+  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.6.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.6.3))(typescript@5.6.3):
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@5.6.3)

@@ -2,9 +2,10 @@ export {}
 
 declare global {
     interface ImportMetaEnv {
-        readonly MOCK_ENABLED: boolean
-        readonly BASE_PORT: number
-        readonly SHOP_PORT: number
-        readonly ORDER_PORT: number
+        readonly VITE_MOCK_ENABLED: boolean
+        readonly VITE_BASE_PORT: number
+        readonly VITE_SHOP_PORT: number
+        readonly VITE_ORDER_PORT: number
+        readonly VITE_HOST: string
     }
 }

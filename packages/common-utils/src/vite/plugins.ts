@@ -21,9 +21,11 @@ export function createVitePlugins(isProduction: boolean) {
         }),
         AutoImport({
             resolvers: [ElementPlusResolver()],
+            dts: './src/types/auto-imports.d.ts',
         }),
         Components({
             resolvers: [ElementPlusResolver()],
+            dts: './src/types/components.d.ts',
         }),
     ]
 
