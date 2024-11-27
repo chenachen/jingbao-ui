@@ -24,7 +24,11 @@ export function createVitePlugins(isProduction: boolean) {
             dts: './src/types/auto-imports.d.ts',
         }),
         Components({
-            resolvers: [ElementPlusResolver()],
+            resolvers: [
+                ElementPlusResolver({
+                    importStyle: 'sass',
+                }),
+            ],
             dts: './src/types/components.d.ts',
         }),
     ]

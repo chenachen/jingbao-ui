@@ -1,5 +1,6 @@
 // 通过 loadEnv 导出的环境变量为 Record<string, string>，这里用于转换成类型更准确的值
 import { join } from 'node:path'
+import { ImportMetaEnv } from '@common/types'
 
 export function convertViteEnv(envRecord: Record<string, string>): ImportMetaEnv {
     // eslint-disable-next-line

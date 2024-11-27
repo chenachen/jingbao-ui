@@ -10,7 +10,8 @@
     },
     "dependencies": {
         "@common/constant": "workspace:*",
-        "@common/utils": "workspace:*"
+        "@common/utils": "workspace:*",
+        "@common/static": "workspace:*"
     },
     "devDependencies": {}
 }

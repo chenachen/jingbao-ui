@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
-import { convertViteEnv, getPathBaseRoot, createVitePlugins } from '@common/utils'
+import { createVitePlugins } from '../../scripts/vite/plugins'
+import { convertViteEnv, getPathBaseRoot } from '../../scripts/vite/utils'
 
 export default defineConfig(({ command, mode }) => {
     const isProduction = command === 'build'
@@ -9,6 +10,13 @@ export default defineConfig(({ command, mode }) => {
     return {
         server: {
             port: VITE_ORDER_PORT,
+        },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@use "@common/static/styles/element-var.scss" as *;',
+                },
+            },
         },
         envDir,
         plugins: createVitePlugins(isProduction),

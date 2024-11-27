@@ -7,5 +7,8 @@
     "scripts": {},
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "@common/constant": "workspace:*"
+    }
 }

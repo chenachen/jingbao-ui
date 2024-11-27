@@ -1,0 +1,18 @@
+{
+    "name": "@common/types",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./index.d.ts"
+        },
+        "./global": {
+            "types": "./global.d.ts"
+        }
+    },
+    "scripts": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

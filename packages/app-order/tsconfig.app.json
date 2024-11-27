@@ -21,7 +21,7 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
-        "types": ["vite/client"]
+        "types": ["vite/client", "@common/types/global"]
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "../global.d.ts", "../common-utils/**/*.ts"]
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
