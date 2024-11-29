@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import { ShopRouteRecordMap, ShopRoutes } from '@common/constant'
+import { APP_CONFIG, AppName, ShopRouteRecordMap, ShopRoutes } from '@common/constant'
 
 const Home = () => import('../views/home/HomePage.vue')
 const SearchResult = () => import('../views/search-result/SearchResult.vue')
@@ -25,7 +25,7 @@ const routes: RouteRecordRaw[] = [
 
 const router = createRouter({
     routes,
-    history: createWebHistory(),
+    history: createWebHistory(APP_CONFIG[AppName.SHOP].basePath),
 })
 
 export default router

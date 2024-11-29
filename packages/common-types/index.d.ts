@@ -10,3 +10,7 @@ export interface ImportMetaEnv {
     readonly VITE_SHOP_BASE_PATH: string
     readonly VITE_ORDER_BASE_PATH: string
 }
+
+export type AppStateChangeEvent = CustomEvent<{
+    appState: 'afterhidden' | 'beforeshow' | 'aftershow'
+}>

@@ -1,23 +1,23 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import { APP_CONFIG, AppName } from '@common/constant'
+import { AppName, BaseRouteRecordMap } from '@common/constant'
 
 const AppShop = () => import('../apps/AppShop.vue')
 const AppOrder = () => import('../apps/AppOrder.vue')
 
-const shopConfig = APP_CONFIG[AppName.SHOP]
-const orderConfig = APP_CONFIG[AppName.ORDER]
+const BASE_ROUTE_INFO = BaseRouteRecordMap.get(AppName.BASE)!
+const HOME_ROUTE_INFO = BaseRouteRecordMap.get(AppName.SHOP)!
+const ORDER_ROUTE_INFO = BaseRouteRecordMap.get(AppName.ORDER)!
 
 const routes: RouteRecordRaw[] = [
     {
-        name: 'Base',
-        path: '/',
+        path: BASE_ROUTE_INFO.path,
         redirect: {
-            name: 'Home',
+            name: HOME_ROUTE_INFO.name,
         },
         children: [
             {
-                name: 'Home',
-                path: shopConfig.basePath,
+                name: HOME_ROUTE_INFO.name,
+                path: HOME_ROUTE_INFO.path,
                 component: AppShop,
                 children: [
                     {
@@ -27,8 +27,8 @@ const routes: RouteRecordRaw[] = [
                 ],
             },
             {
-                name: 'Order',
-                path: orderConfig.basePath,
+                name: ORDER_ROUTE_INFO.name,
+                path: ORDER_ROUTE_INFO.path,
                 component: AppOrder,
                 children: [
                     {

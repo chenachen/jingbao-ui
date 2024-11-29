@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { ShopRoutes } from '@common/constant'
+import { OrderRoutes, ShopRoutes } from '@common/constant'
+import { useCustomRouter } from '@common/utils'
 
-const router = useRouter()
+const router = useCustomRouter()
 
 const toSearchResult = () => {
-    router.push({
+    router.customPush({
         name: ShopRoutes.SEARCH_RESULTS,
     })
 }
 
 const toOrderPage = () => {
-    router.push('/order')
+    router.customPush({
+        name: OrderRoutes.HOME,
+    })
 }
 </script>
 

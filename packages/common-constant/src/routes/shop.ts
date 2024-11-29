@@ -1,4 +1,5 @@
-import { APP_CONFIG, AppName } from '../app-config.ts'
+import { AppName } from '../app-config.ts'
+import { RouteInfo } from './types.ts'
 
 export enum ShopRoutes {
     HOME = `${AppName.SHOP}_HOME`,
@@ -6,29 +7,26 @@ export enum ShopRoutes {
     PRODUCT_DETAIL = `${AppName.SHOP}_PRODUCT_DETAIL`,
 }
 
-interface RouteInfo {
-    name: string
-    path: string
-}
-
-function getFullPath(path: string) {
-    const { basePath } = APP_CONFIG[AppName.SHOP]
-    return `${basePath}${path}`
-}
-
 export const ShopRouteRecordMap = new Map<ShopRoutes, RouteInfo>([
     [
         ShopRoutes.HOME,
         {
             name: ShopRoutes.HOME,
-            path: getFullPath('/home'),
+            path: '/home',
         },
     ],
     [
         ShopRoutes.SEARCH_RESULTS,
         {
             name: ShopRoutes.SEARCH_RESULTS,
-            path: getFullPath('/search-result'),
+            path: '/search-result',
+        },
+    ],
+    [
+        ShopRoutes.PRODUCT_DETAIL,
+        {
+            name: ShopRoutes.PRODUCT_DETAIL,
+            path: '/product-detail',
         },
     ],
 ])

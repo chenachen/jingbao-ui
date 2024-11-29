@@ -1,2 +1,3 @@
 export { ShopRoutes, ShopRouteRecordMap } from './shop.ts'
-export { OrderRoutes } from './order.ts'
+export { OrderRouteRecordMap, OrderRoutes } from './order.ts'
+export { BaseRouteRecordMap } from './base.ts'
